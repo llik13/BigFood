@@ -1,0 +1,24 @@
+syntax = "proto3";
+
+option csharp_namespace = "AgregatorGrpc.Protos";
+
+package greet;
+
+import "google/protobuf/empty.proto";
+
+import "Protos/product.proto";
+import "Protos/review.proto";
+
+
+service Agregator{
+	rpc GetAll(google.protobuf.Empty) returns (ListFullProducts);
+}
+
+message FullProductModel{
+	ProductDTOs product = 1;
+	Review review = 2;
+}
+
+message ListFullProducts{
+	repeated FullProductModel product = 1;
+}

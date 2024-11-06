@@ -1,0 +1,34 @@
+syntax = "proto3";
+
+option csharp_namespace = "Admin.Web.Protos";
+
+package product;
+
+import "google/protobuf/empty.proto";
+import "google/protobuf/wrappers.proto";
+
+service Products{
+	rpc UpdateProduct(ProductDTOs) returns (google.protobuf.Empty);
+    rpc GetProducts(google.protobuf.Empty) returns (ProductList);
+    rpc DeleteProduct(ProductDTOs) returns(google.protobuf.Empty);
+    rpc AddProduct(ProductDTOs) returns(google.protobuf.Empty);
+}
+
+message ProductDTOs {
+    int32 ProductId = 1;
+    string Name = 2;
+    string Description = 3;
+    DecimalValue Price = 4;
+    int32 CategoryId = 5;
+    string ImageUrl = 6;
+    bool Availability = 7;
+}
+
+message DecimalValue {
+    int64 units = 1;
+    int32 nanos = 2;
+}
+
+message ProductList {
+    repeated ProductDTOs products = 1;  
+}
