@@ -31,7 +31,6 @@
   <ItemGroup>
     <ProjectReference Include="..\Catalog.BuisnesDataLayer\Catalog.BuisnesDataLayer.csproj" />
     <ProjectReference Include="..\DataAccessLayer\Catalog.DataAccessLayer.csproj" />
-    <ProjectReference Include="..\WebApplication1\Registration.csproj" />
   </ItemGroup>
 
 </Project>
