@@ -14,8 +14,7 @@ using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
-using Registration.Setting;
-using System.Configuration;
+
 using System.IdentityModel.Tokens.Jwt;
 using System.Text;
 

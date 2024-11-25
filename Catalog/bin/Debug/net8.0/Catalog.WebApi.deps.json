@@ -2648,20 +2648,6 @@
         "runtime": {
           "Catalog.DataAccessLayer.dll": {}
         }
-      },
-      "Registration/1.0.0": {
-        "dependencies": {
-          "Microsoft.AspNetCore.Authentication.JwtBearer": "8.0.0",
-          "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "8.0.0",
-          "Microsoft.VisualStudio.Web.CodeGeneration.Design": "8.0.0",
-          "MySql.EntityFrameworkCore": "8.0.0",
-          "Pomelo.EntityFrameworkCore.MySql": "8.0.0",
-          "Swashbuckle.AspNetCore": "6.4.0",
-          "System.IdentityModel.Tokens.Jwt": "8.0.0"
-        },
-        "runtime": {
-          "Registration.dll": {}
-        }
       }
     }
   },
@@ -4357,11 +4343,6 @@
       "sha512": ""
     },
     "Catalog.DataAccessLayer/1.0.0": {
-      "type": "project",
-      "serviceable": false,
-      "sha512": ""
-    },
-    "Registration/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
