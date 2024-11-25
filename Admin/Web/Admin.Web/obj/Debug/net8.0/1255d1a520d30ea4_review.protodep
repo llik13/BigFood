@@ -1,4 +1,0 @@
-obj/Debug/net8.0/Protos/Review.cs \
-obj/Debug/net8.0/Protos/ReviewGrpc.cs: /home/taras/.nuget/packages/grpc.tools/2.66.0/build/native/include/google/protobuf/timestamp.proto\
- /home/taras/.nuget/packages/grpc.tools/2.66.0/build/native/include/google/protobuf/empty.proto\
- Protos/review.proto
