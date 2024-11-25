@@ -2801,39 +2801,33 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\user\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+    "/home/taras/.nuget/packages/": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\ASP.NET\\Catalog.BuisnesDataLayer\\Catalog.BuisnesDataLayer.csproj",
+      "projectUniqueName": "/home/taras/BigFood/Catalog.BuisnesDataLayer/Catalog.BuisnesDataLayer.csproj",
       "projectName": "Catalog.BuisnesDataLayer",
-      "projectPath": "D:\\ASP.NET\\Catalog.BuisnesDataLayer\\Catalog.BuisnesDataLayer.csproj",
-      "packagesPath": "C:\\Users\\user\\.nuget\\packages\\",
-      "outputPath": "D:\\ASP.NET\\Catalog.BuisnesDataLayer\\obj\\",
+      "projectPath": "/home/taras/BigFood/Catalog.BuisnesDataLayer/Catalog.BuisnesDataLayer.csproj",
+      "packagesPath": "/home/taras/.nuget/packages/",
+      "outputPath": "/home/taras/BigFood/Catalog.BuisnesDataLayer/obj/",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-      ],
+      "UsingMicrosoftNETSdk": false,
       "configFilePaths": [
-        "C:\\Users\\user\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "/home/taras/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net8.0"
       ],
       "sources": {
-        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "D:\\ASP.NET\\DataAccessLayer\\Catalog.DataAccessLayer.csproj": {
-              "projectPath": "D:\\ASP.NET\\DataAccessLayer\\Catalog.DataAccessLayer.csproj"
+            "/home/taras/BigFood/DataAccessLayer/Catalog.DataAccessLayer.csproj": {
+              "projectPath": "/home/taras/BigFood/DataAccessLayer/Catalog.DataAccessLayer.csproj"
             }
           }
         }
@@ -2881,7 +2875,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "/usr/lib/dotnet/sdk/8.0.110/PortableRuntimeIdentifierGraph.json"
       }
     }
   }
