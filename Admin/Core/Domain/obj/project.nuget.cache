@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "hU/9CsxFnen9sth8kbSlcuglK+HY3n2LJuR8aB3j1ws77s/q1gaLWU3l20jjohw8NM9mKThIayRY6Nyh4hCcQg==",
+  "dgSpecHash": "S9nb51c1JJM=",
   "success": true,
-  "projectFilePath": "D:\\ASP.NET\\Admin\\Core\\Domain\\Domain.csproj",
+  "projectFilePath": "/home/taras/BigFood/Admin/Core/Domain/Domain.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

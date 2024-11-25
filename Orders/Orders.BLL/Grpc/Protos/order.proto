@@ -1,0 +1,29 @@
+syntax = "proto3";
+
+option csharp_namespace = "Orders.BLL.Grpc";
+
+package ordergrpc;
+
+import "google/protobuf/timestamp.proto";
+
+service OrderProtoService{
+  rpc GetAllOrders (GetAllOrdersRequest) returns (stream ShortOrderResponseGrpc);
+}
+
+message GetAllOrdersRequest{
+}
+
+message ShortOrderResponseGrpc{
+  int32 Id = 1;
+  google.protobuf.Timestamp OrderDate = 2;
+  string Status = 3;
+  int32 ProductId = 4;
+  double LineTotal = 5;
+  ShortProductResponseGrpc Product = 6;
+}
+
+message ShortProductResponseGrpc{
+  int32 id = 1;
+  string ProductName = 2;
+  double Price = 3;
+}
