@@ -1,0 +1,16 @@
+D:\ASP.NET\Catalog.BuisnesDataLayer\bin\Debug\net8.0\Catalog.BuisnesDataLayer.deps.json
+D:\ASP.NET\Catalog.BuisnesDataLayer\bin\Debug\net8.0\Catalog.BuisnesDataLayer.dll
+D:\ASP.NET\Catalog.BuisnesDataLayer\bin\Debug\net8.0\Catalog.BuisnesDataLayer.pdb
+D:\ASP.NET\Catalog.BuisnesDataLayer\bin\Debug\net8.0\Catalog.DataAccessLayer.dll
+D:\ASP.NET\Catalog.BuisnesDataLayer\bin\Debug\net8.0\Catalog.DataAccessLayer.pdb
+D:\ASP.NET\Catalog.BuisnesDataLayer\obj\Debug\net8.0\Catalog.BuisnesDataLayer.csproj.AssemblyReference.cache
+D:\ASP.NET\Catalog.BuisnesDataLayer\obj\Debug\net8.0\Catalog.BuisnesDataLayer.GeneratedMSBuildEditorConfig.editorconfig
+D:\ASP.NET\Catalog.BuisnesDataLayer\obj\Debug\net8.0\Catalog.BuisnesDataLayer.AssemblyInfoInputs.cache
+D:\ASP.NET\Catalog.BuisnesDataLayer\obj\Debug\net8.0\Catalog.BuisnesDataLayer.AssemblyInfo.cs
+D:\ASP.NET\Catalog.BuisnesDataLayer\obj\Debug\net8.0\Catalog.BuisnesDataLayer.csproj.CoreCompileInputs.cache
+D:\ASP.NET\Catalog.BuisnesDataLayer\obj\Debug\net8.0\Catalog.BuisnesDataLayer.csproj.CopyComplete
+D:\ASP.NET\Catalog.BuisnesDataLayer\obj\Debug\net8.0\Catalog.BuisnesDataLayer.dll
+D:\ASP.NET\Catalog.BuisnesDataLayer\obj\Debug\net8.0\refint\Catalog.BuisnesDataLayer.dll
+D:\ASP.NET\Catalog.BuisnesDataLayer\obj\Debug\net8.0\Catalog.BuisnesDataLayer.pdb
+D:\ASP.NET\Catalog.BuisnesDataLayer\obj\Debug\net8.0\ref\Catalog.BuisnesDataLayer.dll
+D:\ASP.NET\Catalog.BuisnesDataLayer\obj\Debug\net8.0\Catalog.BuisnesDataLayer.sourcelink.json

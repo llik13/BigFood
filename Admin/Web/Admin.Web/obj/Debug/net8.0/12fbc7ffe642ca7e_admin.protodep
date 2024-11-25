@@ -1,0 +1,4 @@
+obj\Debug\net8.0\Protos/Admin.cs \
+obj\Debug\net8.0\Protos/AdminGrpc.cs: C:/Users/user/.nuget/packages/grpc.tools/2.66.0/build/native/include/google/protobuf/empty.proto\
+ C:/Users/user/.nuget/packages/grpc.tools/2.66.0/build/native/include/google/protobuf/wrappers.proto\
+ Protos/admin.proto

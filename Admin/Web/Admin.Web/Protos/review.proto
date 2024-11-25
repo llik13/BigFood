@@ -1,0 +1,28 @@
+syntax = "proto3";
+
+option csharp_namespace = "Admin.Web.Protos";
+
+package review;
+
+import "google/protobuf/timestamp.proto";
+import "google/protobuf/empty.proto";
+
+service Reviews{
+	rpc GetReviews(google.protobuf.Empty) returns (ReviewList); 
+	rpc GetById(Review) returns (Review);
+	rpc AddReviews(google.protobuf.Empty) returns (ReviewList); 
+	rpc UpdateReviews(google.protobuf.Empty) returns (ReviewList); 
+	rpc DeleteReviews(google.protobuf.Empty) returns (ReviewList); 
+}
+
+message Review{
+	int32 Id = 1;
+	int32 UserId = 2;
+	string Content = 3;
+	bytes Rating = 4;
+	google.protobuf.Timestamp CreatedAt = 5;
+}
+
+message ReviewList{
+	repeated Review reviews = 1;
+}

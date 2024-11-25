@@ -1,0 +1,11 @@
+D:\ASP.NET\Admin\Core\Domain\bin\Debug\net8.0\Domain.deps.json
+D:\ASP.NET\Admin\Core\Domain\bin\Debug\net8.0\Domain.dll
+D:\ASP.NET\Admin\Core\Domain\bin\Debug\net8.0\Domain.pdb
+D:\ASP.NET\Admin\Core\Domain\obj\Debug\net8.0\Domain.GeneratedMSBuildEditorConfig.editorconfig
+D:\ASP.NET\Admin\Core\Domain\obj\Debug\net8.0\Domain.AssemblyInfoInputs.cache
+D:\ASP.NET\Admin\Core\Domain\obj\Debug\net8.0\Domain.AssemblyInfo.cs
+D:\ASP.NET\Admin\Core\Domain\obj\Debug\net8.0\Domain.csproj.CoreCompileInputs.cache
+D:\ASP.NET\Admin\Core\Domain\obj\Debug\net8.0\Domain.dll
+D:\ASP.NET\Admin\Core\Domain\obj\Debug\net8.0\refint\Domain.dll
+D:\ASP.NET\Admin\Core\Domain\obj\Debug\net8.0\Domain.pdb
+D:\ASP.NET\Admin\Core\Domain\obj\Debug\net8.0\ref\Domain.dll
