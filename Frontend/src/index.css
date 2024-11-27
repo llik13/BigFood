@@ -1,0 +1,105 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+:root {font-family: "DM Sans", sans-serif;}
+#root{
+    max-width: 1920px;
+    margin: 0 auto;
+    height: 100%;
+    padding-bottom: 210px;
+}
+html,body{
+    height: 100%;
+}
+.main-header .mob,
+.main-header .burger {
+    display: none;
+}
+.item-specific{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 1rem;
+    min-height: 200px;
+}
+.item-specific::after{
+    content: '';
+    position: absolute;
+    background-image: var(--img);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: bottom center;
+    z-index: 0;
+}
+.img-right .item-specific{
+    align-items: flex-end;
+    background-position: bottom right;
+}
+.img-right .item-specific::after{
+    width: 60%;
+    height: calc(200px - 2rem);
+    bottom: .5rem;
+    right: 1rem;
+}
+.img-center .item-specific::after{
+    width: 90%;
+    height: calc(200px - 1rem);
+    bottom: .5rem;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.item-specific.fit-right::after{
+    height: 90%;
+    bottom: 0;
+    right: 0;
+    width: 100px;
+}
+.item-specific.enlarge::after{
+    width: 100%;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.item-specific.sticky-bottom::after{
+    bottom: 0;
+}
+.item-specific h3{
+    width: 100%;
+    display: block;
+    z-index: 1;
+    text-shadow: 1px 1px 1px rgba(255,255,255,0.52);
+}
+.row-span-2 .item-specific::after,
+.row-span-3 .item-specific::after{
+    height: 70%;
+}
+
+@media screen and (max-width: 1024px) {
+    #root{
+        max-width: 100%;
+    }
+}
+@media screen and (max-width: 768px) {
+    #root{
+        max-width: 100vw;
+    }
+    .main-header .mob,
+    .main-header .burger {
+        display: block;
+    }
+    .main-header .dkt{
+        display: none;
+    }
+}
+@media screen and (max-width: 390px) {
+    #root{
+        max-width: 100vw;
+    }
+    .main-header .mob,
+    .main-header .burger {
+        display: block;
+    }
+    .main-header .dkt{
+        display: none;
+    }
+}

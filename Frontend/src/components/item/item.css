@@ -1,0 +1,100 @@
+.item{
+  padding: 10px;
+  border-radius: 10px;
+  border: 1px solid #2d2d2d;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+}
+
+.item .name-block {
+  width: calc(100% - 200px);
+  display: flex;
+}
+
+.item .price-block {
+  display: flex;
+}
+
+.item .image {
+  width: 180px;
+  height: 180px;
+  background-image: var(--img);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.item .counter{
+  display: flex;
+  align-items: center;
+}
+.item .counter button, .item .counter span{
+  background-color: #FED600;
+  padding: 0 5px;
+}
+.item .counter button:first-child{
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+}
+.item .counter button:last-child{
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+.item .counter span {
+  min-width: 50px;
+  text-align: center;
+}
+
+.item p.description{
+  font-size: 10px;
+  opacity: .8;
+}
+
+.item .rm{
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-image: url('./close.svg');
+  background-size: 80%;
+  background-position: center;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: #ececec;
+  cursor: pointer;
+}
+
+/* MENU */
+
+.item.menu-page{
+  flex-direction: column;
+  align-items: unset;
+}
+.item.menu-page .image{
+  margin: 0 auto;
+}
+.item.menu-page .price-block {
+  width: 100%;
+  justify-content: space-between;
+  margin: 10px 0;
+}
+
+/* ORDER */
+
+.item.order-page .image{
+  width: 120px;
+  height: 120px;
+}
+
+.item.order-page .name-block{
+  flex-grow: 1;
+  display: block;
+  padding: 0 0 0 20px;
+}
+
+.item.order-page .price-block{
+  margin-top: 10px;
+  justify-content: space-between;
+}
