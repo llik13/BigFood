@@ -5,10 +5,13 @@ import PropTypes from "prop-types";
 import PhoneInput from "react-phone-input-2";
 import "./sign-page.css";
 import OTPInput from 'react-otp-input';
+import CabinetPage from "../cabinet/CabinetPage.jsx";
 
 function SignPageWrapper() {
     const location = useLocation();
-    console.log({"wrapper":location});
+    if( RouteKeys[location.pathname] === "cabinet" ){
+        return <CabinetPage/>;
+    }
     return <SignPage location={location} />;
 }
 
@@ -86,6 +89,66 @@ class SignPage extends React.Component {
                 </div>}
                 {this.state.stage === "sign-in-success" && <div className="stage three">
                     <p className="heading">Signing in</p>
+                    <p className="key">You have successfully logged in.</p>
+                    <button type={"submit"} onClick={() => {
+                        window.location.href = "/account/home"
+                    }}>Cabinet
+                    </button>
+                </div>}
+                {this.state.stage === "sign-up-form" && <dev className="stage one">
+                    <p className="heading">Signing up</p>
+                    <div className="form-wrapper">
+                        <p className="key">Your name</p>
+                        <input type="text" className={"text-input"} name={"name"}/>
+                        <p className="key">Your email</p>
+                        <input type="text" className={"text-input"} name={"email"}/>
+                        <p className="key">Your phone number</p>
+                        <PhoneInput
+                            country={'ua'}
+                            value={this.state.phone}
+                            required={true}
+                            name="phone"
+                            className={"phone-input"}
+                            onChange={phone => this.setState({phone})}
+                        />
+                        <button type={"submit"} onClick={() => {
+                            window.location.href = "/account/sign-up/code"
+                        }}>Send code
+                        </button>
+                    </div>
+                </dev>}
+                {this.state.stage === "sign-up-code" && <div className="stage two">
+                    <p className="heading">Signing up</p>
+                    <div className="form-wrapper">
+                        <p className="key">Your code</p>
+                        <OTPInput
+                            value={this.state.otp}
+                            onChange={value => this.setState({ otp: value })}
+                            numInputs={6}
+                            isInputNum
+                            renderSeparator={<span>&nbsp;&nbsp;</span>}
+                            renderInput={(props) => <input {...props} />}
+                            inputStyle={{
+                                width: '40px',
+                                height: '40px',
+                                fontSize: '18px',
+                                borderRadius: '4px',
+                                border: '1px solid #ccc',
+                                textAlign: 'center',
+                                marginBottom: '20px',
+                            }}
+                            focusStyle={{
+                                border: '1px solid #007BFF',
+                                outline: 'none',
+                            }}
+                        />
+                        <button type={"submit"} onClick={() => {
+                            window.location.href = "/account/sign-up/success"
+                        }}>Verify</button>
+                    </div>
+                </div>}
+                {this.state.stage === "sign-up-success" && <div className="stage three">
+                    <p className="heading">Signing up</p>
                     <p className="key">You have successfully logged in.</p>
                     <button type={"submit"} onClick={() => {
                         window.location.href = "/account/home"

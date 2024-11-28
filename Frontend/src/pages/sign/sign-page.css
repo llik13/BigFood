@@ -39,6 +39,16 @@
     margin-bottom: 60px;
 }
 
+.sign-stage-wrapper .form-wrapper input.text-input {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+    line-height: 35px;
+    padding: 0 10px;
+    width: 300px;
+    margin-bottom: 20px;
+}
+
 .sign-stage-wrapper button[type="submit"] {
     background-color: #FED600;
     border-radius: 10px;

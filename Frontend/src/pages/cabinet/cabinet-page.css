@@ -1,0 +1,62 @@
+.cabinet-wrapper{
+    min-height: calc(100vh - 300px);
+    padding: 100px 0 0 0;
+}
+.cabinet-wrapper .accordion {
+    border-top: 1px solid #ccc;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.cabinet-wrapper .accordion-item {
+    border-bottom: 1px solid #ccc;
+}
+
+.cabinet-wrapper h3[class$="heading"] {
+    padding: 10px 15px;
+    font-size: 20px;
+    line-height: 26px;
+    font-weight: 600;
+}
+.cabinet-wrapper div[class$="content"] {
+    margin-bottom: 40px;
+    padding: 0 20px;
+}
+
+.cabinet-wrapper .order-wrapper .order-item {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.cabinet-wrapper .info-wrapper input.text-input {
+    display: block;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+    line-height: 35px;
+    padding: 0 10px;
+    width: 300px;
+    margin-bottom: 20px;
+}
+
+.cabinet-wrapper .delivery-wrapper .delivery-item {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.cabinet-wrapper .delivery-wrapper .add-address {
+    background-color: #FED600;
+    border-radius: 10px;
+    padding: 0 15px;
+    font-weight: 600;
+    line-height: 35px;
+}
