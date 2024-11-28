@@ -2,6 +2,7 @@ using System.Diagnostics.Eventing.Reader;
 using AutoMapper;
 using Orders.BLL.DTO.Requests;
 using Orders.BLL.DTO.Responses;
+using Orders.BLL.Enums;
 using Orders.BLL.Services.Contrancts;
 using Orders.DAL.Models;
 using Orders.DAL.Pagination.Parameters;
@@ -40,7 +41,7 @@ public class OrderService : IOrderService
         ISpecification<Order> spec = new DefaultOrderSpecification();
         if (orderParameters.OrderBy == "date")
         {
-            spec = new OrderByDateOrderSpecification(o => o.Status == "completed");
+            spec = new OrderByDateOrderSpecification(o => o.Status == OrderStatus.Delivered);
         }
         else if (orderParameters.OrderBy == "lineTotal")
         {

@@ -23,9 +23,15 @@ CREATE TABLE orders (
     user_id INT REFERENCES users(id) ON DELETE CASCADE,
     order_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     status VARCHAR(50) NOT NULL,
-    shipping_address TEXT NOT NULL,
+    shipping_address TEXT NOT NULL
+);
+
+-- Order Details table (line items for each order)
+CREATE TABLE order_details (
+    id SERIAL PRIMARY KEY,
+    order_id INT REFERENCES orders(id) ON DELETE CASCADE,
     product_id INT REFERENCES products(id) ON DELETE CASCADE,
-    quantity INT NOT NULL,
+    quantity INT NOT NULL CHECK (quantity > 0),
     price DECIMAL(10, 2) NOT NULL,
     line_total DECIMAL(10, 2) GENERATED ALWAYS AS (quantity * price) STORED
 );
@@ -33,5 +39,7 @@ CREATE TABLE orders (
 -- Create Indexes (optional for performance optimization)
 CREATE INDEX idx_order_user ON orders(user_id);
 CREATE INDEX idx_order_date ON orders(order_date);
-CREATE INDEX idx_order_product ON orders(product_id);
+CREATE INDEX idx_order_details_order ON order_details(order_id);
+CREATE INDEX idx_order_details_product ON order_details(product_id);
+
 

@@ -15,7 +15,9 @@ public class OrderRepository : GenericRepository<Order>, IOrderRepository
     public override async Task<IEnumerable<Order>> GetAllAsync()
     {
         var result = await table
-            .Include(o => o.Product)
+            .Include(o => o.User)
+            .Include(o => o.OrderDetails)
+            .ThenInclude(o => o.Product)
             .ToListAsync();
         return result;
     }
@@ -25,8 +27,9 @@ public class OrderRepository : GenericRepository<Order>, IOrderRepository
         //var result = await table.Include(o => o.Product).FirstOrDefaultAsync();
         var result = await table
             .Where(o => o.Id == id)
-            //.Include(o => o.Product)
             .Include(o => o.User)
+            .Include(o => o.OrderDetails)
+            .ThenInclude(o => o.Product)
             .SingleOrDefaultAsync();
         return result;
     }
