@@ -1,0 +1,38 @@
+[
+  {
+    "id": "addr-1",
+    "name": "My first address",
+    "city": "Narnia",
+    "street": "Kings bridge",
+    "house": "1",
+    "entrance": "main gate",
+    "floor": "second",
+    "apt": "4",
+    "intercom": "Just shout",
+    "green-zone": false
+  },
+  {
+    "id": "addr-2",
+    "name": "My second address",
+    "city": "Neverland",
+    "street": "Witch's tower",
+    "house": "3rd floor",
+    "entrance": "main gate",
+    "floor": "3",
+    "apt": "1",
+    "intercom": "Ring the bell",
+    "green-zone": true
+  },
+  {
+    "id": "addr-3",
+    "name": "My third address",
+    "city": "Cyrodiil",
+    "street": "Lake Rumare",
+    "house": "4th hustle",
+    "entrance": "green door",
+    "floor": "-2",
+    "apt": "7",
+    "intercom": "Call the servant",
+    "green-zone": true
+  }
+]

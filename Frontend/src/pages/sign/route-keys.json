@@ -1,0 +1,9 @@
+{
+  "/account": "sign-in",
+  "/account/sign-in": "sign-in",
+  "/account/sign-in/code": "sign-in-code",
+  "/account/sign-in/success": "sign-in-success",
+  "/account/sign-up": "sign-up-form",
+  "/account/sign-up/code": "sign-up-code",
+  "/account/sign-up/success": "sign-up-success"
+}
