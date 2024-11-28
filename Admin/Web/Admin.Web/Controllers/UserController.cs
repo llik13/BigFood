@@ -1,65 +1,65 @@
 ﻿using Aplication.Interfaces;
-using Aplication.User.Commands;
-using Aplication.User;
-using AutoMapper;
-using MediatR;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Northwind.WebUI.Controllers;
-using Aplication.User.Queries;
+using Microsoft.AspNetCore.Authorization;
+using Admin.Web.Service;
+using Admin.Web.Dto;
 
 namespace Admin.Web.Controllers
 {
+    
     [ApiController]
     [Route("api/users")]
-    public class UserController : BaseController
+    public class AdminUserController : ControllerBase
     {
-        [HttpPost]
-        public async Task<IActionResult> CreateUser([FromBody] CreateUserCommand command)
+        private readonly UserService _userServiceClient;
+
+        public AdminUserController(UserService userServiceClient)
         {
-            var userId = await Mediator.Send(command);
-            return CreatedAtAction(nameof(GetUserById), new { id = userId }, null);
+            _userServiceClient = userServiceClient;
         }
 
-        // Получение всех пользователей
-        [HttpGet]
-        public async Task<ActionResult<List<UserDto>>> GetAllUsers()
-        {
-            var users = await Mediator.Send(new GetUsersQuery());
-            return Ok(users);
-        }
-
-        // Получение пользователя по ID
         [HttpGet("{id}")]
-        public async Task<ActionResult<UserDto>> GetUserById(int id)
+        public async Task<IActionResult> GetUser(string id)
         {
-            var user = await Mediator.Send(new GetUserByIdQuery(id));
-            if (user == null)
+            try
+            {
+                var user = await _userServiceClient.GetUserAsync(id);
+                return Ok(user);
+            }
+            catch (HttpRequestException)
             {
                 return NotFound();
             }
-            return Ok(user);
         }
 
-        // Обновление пользователя
         [HttpPut("{id}")]
-        public async Task<IActionResult> UpdateUser(int id, [FromBody] UpdateUserCommand command)
+        
+        public async Task<IActionResult> UpdateUser(string id, [FromBody] UpdateUserAdminDto userDto)
         {
-            if (id != command.Id)
+            try
             {
-                return BadRequest();
+                await _userServiceClient.UpdateUserAsync(id, userDto);
+                return NoContent();
             }
-
-            await Mediator.Send(command);
-            return NoContent();
+            catch (HttpRequestException)
+            {
+                return NotFound();
+            }
         }
 
-        // Удаление пользователя
         [HttpDelete("{id}")]
-        public async Task<IActionResult> DeleteUser(int id)
+        public async Task<IActionResult> DeleteUser(string id)
         {
-            await Mediator.Send(new DeleteUserCommand(id));
-            return NoContent();
+            try
+            {
+                await _userServiceClient.DeleteUserAsync(id);
+                return NoContent();
+            }
+            catch (HttpRequestException)
+            {
+                return NotFound();
+            }
         }
     }
 }

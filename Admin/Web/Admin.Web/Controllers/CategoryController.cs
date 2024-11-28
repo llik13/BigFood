@@ -5,9 +5,11 @@ using MediatR;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Northwind.WebUI.Controllers;
+using Microsoft.AspNetCore.Authorization;
 
 namespace Admin.Web.Controllers
 {
+    [Authorize]
     [ApiController]
     [Route("api/categories")]
     public class CategoryController : BaseController

@@ -1,6 +1,7 @@
 ﻿using Aplication.Promotion;
 using Aplication.Promotion.Commands;
 using Aplication.Promotion.Queries;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Northwind.WebUI.Controllers;
@@ -8,6 +9,8 @@ using static System.Net.Mime.MediaTypeNames;
 
 namespace Admin.Web.Controllers
 {
+    [Authorize]
+    [Authorize(Roles = "admin")]
     [ApiController]
     [Route("api/promotions")]
     public class PromotionsController : BaseController

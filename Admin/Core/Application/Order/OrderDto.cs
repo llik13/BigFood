@@ -1,4 +1,4 @@
-﻿using Aplication.User;
+﻿
 using AutoMapper;
 using System;
 using System.Collections.Generic;
@@ -17,7 +17,7 @@ namespace Aplication.Order
         public DateTime CreatedAt { get; set; }
 
         
-        public UserDto User { get; set; }
+       //public UserDto User { get; set; }
 
         public class Mapping : Profile
         {

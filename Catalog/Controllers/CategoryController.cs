@@ -14,7 +14,6 @@ using Microsoft.EntityFrameworkCore.Metadata.Internal;
 
 namespace Catalog.WebApi.Controllers
 {
-    [Authorize]
     [Route("api/[controller]")]
     [ApiController]
     public class CategoryController : ControllerBase

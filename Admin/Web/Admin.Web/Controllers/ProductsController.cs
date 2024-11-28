@@ -3,6 +3,7 @@ using Aplication.Product.Commands;
 using Aplication.Product.Queries;
 using Domain.Entitites;
 using MediatR;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Northwind.WebUI.Controllers;
@@ -10,6 +11,8 @@ using Northwind.WebUI.Controllers;
 namespace Admin.Web.Controllers
 {
     [ApiController]
+    [Authorize]
+    [Authorize(Roles = "admin")]
     [Route("api/products")]
     public class ProductsController : BaseController
     {

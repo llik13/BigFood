@@ -14,12 +14,14 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Routing;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.IdentityModel.Tokens;
+using Registration.Services;
 
 namespace JWTAuthentication.WebApi
 {
@@ -40,8 +42,9 @@ namespace JWTAuthentication.WebApi
 
             //User Manager Service
             services.AddIdentity<ApplicationUser, IdentityRole>().AddEntityFrameworkStores<ApplicationDbContext>();
-            services.AddScoped<IUserService, UserService>();
 
+            services.AddScoped<IUserService, UserService>();
+       
 
             //Adding DB Context with MSSQL
             string connectionString = _configuration.GetConnectionString("MySqlConnection");
@@ -64,8 +67,8 @@ namespace JWTAuthentication.WebApi
                     o.TokenValidationParameters = new TokenValidationParameters
                     {
                         ValidateIssuerSigningKey = true,
-                        ValidateIssuer = true,
-                        ValidateAudience = true,
+                        ValidateIssuer = false,
+                        ValidateAudience = false,
                         ValidateLifetime = true,
                         ClockSkew = TimeSpan.Zero,
                         
@@ -74,8 +77,15 @@ namespace JWTAuthentication.WebApi
                         IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_configuration["JWT:Key"]))
                     };
                 });
+            services.AddTransient<ICustomEmailSender, EmailSender>();
+            services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
+            services.AddSingleton<IUrlHelperFactory, UrlHelperFactory>();
+            services.AddHttpContextAccessor();
+
 
             services.AddControllers();
+            services.AddEndpointsApiExplorer();
+            services.AddSwaggerGen();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -84,6 +94,19 @@ namespace JWTAuthentication.WebApi
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
+            }
+
+            if (env.IsDevelopment())
+            {
+                app.UseDeveloperExceptionPage();
+
+                // Настройка Swagger только в режиме разработки
+                app.UseSwagger();
+                app.UseSwaggerUI(options =>
+                {
+                    options.SwaggerEndpoint("/swagger/v1/swagger.json", "My API V1");
+                    options.RoutePrefix = string.Empty; // Swagger будет доступен по корню
+                });
             }
 
             app.UseHttpsRedirection();

@@ -1,0 +1,82 @@
+{
+  "Routes": [
+    {
+      "UpstreamPathTemplate": "/gateway/refresh-token",
+      "UpstreamHttpMethod": [ "GET" ],
+      "DownstreamPathTemplate": "/api/User/refresh-tokent",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7006
+        }
+      ],
+      "SwaggerKey": "Registration"
+    },
+    {
+      "UpstreamPathTemplate": "/gateway/Register",
+      "UpstreamHttpMethod": [ "POST" ],
+      "DownstreamPathTemplate": "/api/User/Register",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7006
+        }
+      ],
+      "SwaggerKey": "Registration"
+    },
+    {
+      "UpstreamPathTemplate": "/gateway/token",
+      "UpstreamHttpMethod": [ "POST" ],
+      "DownstreamPathTemplate": "/api/User/token",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7006
+        }
+      ],
+      "SwaggerKey": "Registration"
+    },
+    {
+      "UpstreamPathTemplate": "/gateway/addrole",
+      "UpstreamHttpMethod": [ "POST" ],
+      "DownstreamPathTemplate": "/api/User/addrole",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7006
+        }
+      ],
+      "SwaggerKey": "Registration"
+    },
+    {
+      "UpstreamPathTemplate": "/gateway/revoke-token",
+      "UpstreamHttpMethod": [ "POST" ],
+      "DownstreamPathTemplate": "/api/User/revoke-token",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7006
+        }
+      ],
+      "SwaggerKey": "Registration"
+    },
+    {
+      "UpstreamPathTemplate": "/gateway/tokens/{id}",
+      "UpstreamHttpMethod": [ "POST" ],
+      "DownstreamPathTemplate": "/api/User/tokens/{id}",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7006
+        }
+      ],
+      "SwaggerKey": "Registration"
+    }
+  ]
+}

@@ -1,10 +1,10 @@
 ﻿using Microsoft.AspNetCore.Identity;
 
-namespace Domain.Entitites
+namespace Admin.Web.Dto
 {
-    public class User : IdentityUser
+    public class ApplicationUserDto : IdentityUser
     {
         public string FirstName { get; set; }
         public string LastName { get; set; }
     }
-  }
+}
