@@ -17,7 +17,7 @@ public class CategoryController : ControllerBase
         _unitofWork = unitofWork;
     }
 
-    [HttpGet("GetAllCategories")]
+    [HttpGet]
     [ProducesResponseType(StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status500InternalServerError)]
     public async Task<ActionResult<IEnumerable<Category>>> GetAllCategoriesAsync()
@@ -36,7 +36,7 @@ public class CategoryController : ControllerBase
         }      
     }
     
-    [HttpGet("GetById/{id}", Name = "GetCategoryById")]
+    [HttpGet("{id}")]
     [ProducesResponseType(StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status404NotFound)]
     [ProducesResponseType(StatusCodes.Status500InternalServerError)]
@@ -64,7 +64,7 @@ public class CategoryController : ControllerBase
         }
     }
     
-    [HttpPost("PostCategory")]
+    [HttpPost]
     [ProducesResponseType(StatusCodes.Status400BadRequest)]
     [ProducesResponseType(StatusCodes.Status500InternalServerError)]
     [ProducesResponseType(StatusCodes.Status201Created)]
@@ -97,7 +97,7 @@ public class CategoryController : ControllerBase
         }
     }
 
-    [HttpPut("Put/{id}")]
+    [HttpPut("{id}")]
     [ProducesResponseType(StatusCodes.Status400BadRequest)]
     [ProducesResponseType(StatusCodes.Status404NotFound)]
     [ProducesResponseType(StatusCodes.Status500InternalServerError)]
@@ -134,7 +134,7 @@ public class CategoryController : ControllerBase
         }
     }
 
-    [HttpDelete("Delete/{id}")]
+    [HttpDelete("{id}")]
     [ProducesResponseType(StatusCodes.Status204NoContent)]
     [ProducesResponseType(StatusCodes.Status404NotFound)]
     [ProducesResponseType(StatusCodes.Status500InternalServerError)]

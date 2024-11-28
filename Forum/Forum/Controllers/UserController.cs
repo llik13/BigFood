@@ -17,7 +17,7 @@ public class UserController : ControllerBase
         _unitOfWork = unitOfWork;
     }
 
-    [HttpGet("GetAllUsers")]
+    [HttpGet]
     [ProducesResponseType(StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status500InternalServerError)]
     public async Task<ActionResult<IEnumerable<User>>> GetAllUsers()
@@ -36,7 +36,7 @@ public class UserController : ControllerBase
         }
     }
 
-    [HttpGet("GetById/{id}", Name = "GetUserById")]
+    [HttpGet("{id}")]
     [ProducesResponseType(StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status404NotFound)]
     [ProducesResponseType(StatusCodes.Status500InternalServerError)]

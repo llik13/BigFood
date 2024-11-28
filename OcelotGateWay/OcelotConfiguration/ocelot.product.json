@@ -2,7 +2,7 @@
   "Routes": [
     {
       "UpstreamPathTemplate": "/gateway/category",
-      "UpstreamHttpMethod": [ "GET", "POST" ],
+      "UpstreamHttpMethod": [ "GET" ],
       "DownstreamPathTemplate": "/api/Category",
       "DownstreamScheme": "https",
       "DownstreamHostAndPorts": [
@@ -15,7 +15,7 @@
     },
     {
       "UpstreamPathTemplate": "/gateway/category/{id}",
-      "UpstreamHttpMethod": [ "GET", "PUT", "DELETE" ],
+      "UpstreamHttpMethod": [ "GET" ],
       "DownstreamPathTemplate": "/api/Category/{id}",
       "DownstreamScheme": "https",
       "DownstreamHostAndPorts": [
@@ -91,6 +91,6 @@
       ],
       "SwaggerKey": "Catalog"
     }
-    
+
   ]
 }

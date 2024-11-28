@@ -51,6 +51,19 @@
           }
         }
       ]
+    },
+    {
+      "Key": "Forum",
+      "Config": [
+        {
+          "Name": "Forum Web Api",
+          "Version": "v1",
+          "Service": {
+            "Name": "forum",
+            "Path": "/swagger/v1/swagger.json"
+          }
+        }
+      ]
     }
   ]
 }
