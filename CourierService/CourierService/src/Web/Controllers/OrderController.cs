@@ -8,7 +8,7 @@ namespace CourierService.Web.Controllers;
 [Route("/api/[controller]")]
 public class OrdersController : ControllerBase
 {
-    private IMediator _mediator;
+    private readonly IMediator _mediator;
 
     public OrdersController(IMediator mediator)
     {

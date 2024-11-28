@@ -25,6 +25,45 @@
           }
         }
       ]
+    },
+    {
+      "Key": "Admin",
+      "Config": [
+        {
+          "Name": "Admin Web Api",
+          "Version": "v1",
+          "Service": {
+            "Name": "admin",
+            "Path": "/swagger/v1/swagger.json"
+          }
+        }
+      ]
+    },
+    {
+      "Key": "Registration",
+      "Config": [
+        {
+          "Name": "Registration Web Api",
+          "Version": "v1",
+          "Service": {
+            "Name": "registration",
+            "Path": "/swagger/v1/swagger.json"
+          }
+        }
+      ]
+    },
+    {
+      "Key": "Forum",
+      "Config": [
+        {
+          "Name": "Forum Web Api",
+          "Version": "v1",
+          "Service": {
+            "Name": "forum",
+            "Path": "/swagger/v1/swagger.json"
+          }
+        }
+      ]
     }
   ]
 }

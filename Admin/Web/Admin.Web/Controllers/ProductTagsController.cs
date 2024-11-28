@@ -5,9 +5,12 @@ using MediatR;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Northwind.WebUI.Controllers;
+using Microsoft.AspNetCore.Authorization;
 
 namespace Admin.Web.Controllers
 {
+    [Authorize]
+    [Authorize(Roles = "admin")]
     [ApiController]
     [Route("api/producttags")]
     public class ProductTagsController : BaseController

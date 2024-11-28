@@ -20,9 +20,7 @@ namespace Persistence.Configuration
             builder.Property(o => o.CreatedAt)
                 .IsRequired();
 
-            builder.HasOne(o => o.User)
-                .WithMany(u => u.Orders)
-                .HasForeignKey(o => o.UserId); 
+            
         }
     }
 }

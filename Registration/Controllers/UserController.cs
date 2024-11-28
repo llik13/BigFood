@@ -20,15 +20,21 @@ namespace JWTAuthentication.WebApi.Controllers
             _userService = userService;
         }
 
-        [HttpPost("register")]
-        //[ApiExplorerSettings(IgnoreApi = true)]
-        public async Task<ActionResult> RegisterAsync(RegisterModel model)
+        [HttpPost("Register")]
+        public async Task<IActionResult> Register([FromBody] RegisterModel model)
         {
-
-            var result = await _userService.RegisterAsync(model);
-            return Ok(result);
+            if (ModelState.IsValid)
+            {
+                var result = await _userService.RegisterAsync(model);
+                if (result.Contains("Error"))
+                {
+                    return BadRequest(result);
+                }
+                return Ok(result);
+            }
+            return BadRequest("Invalid data.");
         }
-        
+
 
         [HttpPost("token")]
         public async Task<IActionResult> GetTokenAsync(TokenRequestModel model)
