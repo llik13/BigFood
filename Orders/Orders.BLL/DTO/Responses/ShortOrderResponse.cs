@@ -13,6 +13,6 @@ public class ShortOrderResponse
 
     public decimal? LineTotal { get; set; }
     
-    public virtual ShortProductResponse? Product { get; set; }
+    public virtual IEnumerable<OrderDetailResponse>? OrderDetail { get; set; }
 
 }

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace Orders.DAL.Models;
 
-public class Product
+public partial class Product
 {
     public int Id { get; set; }
 
@@ -13,5 +13,5 @@ public class Product
 
     public decimal Price { get; set; }
 
-    public virtual ICollection<Order> Orders { get; set; } = new List<Order>();
+    public virtual ICollection<OrderDetail> OrderDetails { get; set; } = new List<OrderDetail>();
 }

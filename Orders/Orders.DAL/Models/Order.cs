@@ -1,29 +1,24 @@
 ﻿using System;
 using System.Collections.Generic;
+using Orders.BLL.Enums;
 
 namespace Orders.DAL.Models;
 
-public partial class Order
+public class Order
 {
     public int Id { get; set; }
 
     public int? UserId { get; set; }
 
     public DateTime OrderDate { get; set; }
+
+    public OrderStatus Status { get; set; }
     
-    public string Status { get; set; } = null!;
+    public PaymentMethod PaymentMethod { get; set; }
 
     public string ShippingAddress { get; set; } = null!;
 
-    public int? ProductId { get; set; }
-
-    public int Quantity { get; set; }
-
-    public decimal Price { get; set; }
-
-    public decimal? LineTotal { get; set; }
-
-    public virtual Product? Product { get; set; }
+    public virtual IEnumerable<OrderDetail> OrderDetails { get; set; } = new List<OrderDetail>();
 
     public virtual User? User { get; set; }
 }
