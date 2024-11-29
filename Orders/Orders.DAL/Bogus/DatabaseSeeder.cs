@@ -6,6 +6,7 @@ namespace Orders.DAL.Bogus;
 
 public class DatabaseSeeder
 {
+   /*
     public IReadOnlyCollection<Order> Orders { get; private set; } = new List<Order>();
     public IReadOnlyCollection<OrderDetail> OrderDetails { get; private set; } = new List<OrderDetail>();
     public IReadOnlyCollection<Product> Products { get; private set; } = new List<Product>();
@@ -97,4 +98,5 @@ public class DatabaseSeeder
         orders = ordersList;
         orderDetails = orderDetailsList;
     }
+   */
 }

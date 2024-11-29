@@ -21,6 +21,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.IdentityModel.Tokens;
+using Registration.Models;
 using Registration.Services;
 
 namespace JWTAuthentication.WebApi
@@ -42,6 +43,7 @@ namespace JWTAuthentication.WebApi
 
             //User Manager Service
             services.AddIdentity<ApplicationUser, IdentityRole>().AddEntityFrameworkStores<ApplicationDbContext>();
+      
 
             services.AddScoped<IUserService, UserService>();
        

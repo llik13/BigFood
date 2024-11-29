@@ -14,7 +14,7 @@ public partial class OrdersContext : DbContext
     public OrdersContext(DbContextOptions<OrdersContext> options)
         : base(options)
     {
-        //Database.EnsureDeleted();
+        
         Database.EnsureCreated();
     }
 
@@ -43,6 +43,8 @@ public partial class OrdersContext : DbContext
             entity.HasIndex(e => e.UserId, "idx_order_user");
 
             entity.Property(e => e.Id).HasColumnName("id");
+
+            entity.Property(e => e.Number).HasColumnName("number").HasMaxLength(20).IsRequired(false);
             
             entity.Property(e => e.OrderDate)
                 .HasDefaultValueSql("CURRENT_TIMESTAMP")
@@ -147,11 +149,12 @@ public partial class OrdersContext : DbContext
         });
 
         var databaseSeeder = new DatabaseSeeder();
-
+        /*
         modelBuilder.Entity<Product>().HasData(databaseSeeder.Products);
         modelBuilder.Entity<User>().HasData(databaseSeeder.Users);
         modelBuilder.Entity<Order>().HasData(databaseSeeder.Orders);
         modelBuilder.Entity<OrderDetail>().HasData(databaseSeeder.OrderDetails);
+        */
         OnModelCreatingPartial(modelBuilder);
     }
 

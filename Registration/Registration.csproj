@@ -25,4 +25,8 @@
     <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="8.0.0" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Deliver.DAL\Deliver.DAL.csproj" />
+  </ItemGroup>
+
 </Project>

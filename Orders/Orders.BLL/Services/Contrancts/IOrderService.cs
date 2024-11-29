@@ -1,5 +1,6 @@
 using Orders.BLL.DTO.Requests;
 using Orders.BLL.DTO.Responses;
+using Orders.BLL.Enums;
 using Orders.DAL.Models;
 using Orders.DAL.Pagination.Parameters;
 using Orders.DAL.Specification;
@@ -15,4 +16,5 @@ public interface IOrderService
     Task<OrderResponse> AddOrderAsync(OrderRequest order);
     Task<OrderResponse> UpdateOrderAsync(OrderRequest order);
     Task DeleteOrderAsync(int id);
+    Task ChangeStatus(int id, OrderStatus newStatus);
 }

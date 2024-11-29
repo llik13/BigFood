@@ -6,6 +6,7 @@ using JWTAuthentication.WebApi.Models;
 using JWTAuthentication.WebApi.Services;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 
 namespace JWTAuthentication.WebApi.Controllers
@@ -15,9 +16,11 @@ namespace JWTAuthentication.WebApi.Controllers
     public class UserController : ControllerBase
     {
         private readonly IUserService _userService;
-        public UserController(IUserService userService)
+        private readonly RoleManager<IdentityRole> _roleManager;
+        public UserController(IUserService userService, RoleManager<IdentityRole> roleManager)
         {
             _userService = userService;
+            _roleManager = roleManager;
         }
 
         [HttpPost("Register")]
@@ -33,6 +36,27 @@ namespace JWTAuthentication.WebApi.Controllers
                 return Ok(result);
             }
             return BadRequest("Invalid data.");
+        }
+
+        [HttpPost("AddRoles")]
+        public async Task<IActionResult> AddRole(string roleName)
+        {
+            if (string.IsNullOrWhiteSpace(roleName))
+            {
+                return BadRequest("Role name is required");
+            }
+
+            if (!await _roleManager.RoleExistsAsync(roleName))
+            {
+                var result = await _roleManager.CreateAsync(new IdentityRole(roleName));
+                if (result.Succeeded)
+                {
+                    return Ok($"Role '{roleName}' created successfully.");
+                }
+                return BadRequest(result.Errors);
+            }
+
+            return BadRequest($"Role '{roleName}' already exists.");
         }
 
 

@@ -74,5 +74,25 @@ public class OrdersController : ControllerBase
         
         return await _orderService.AddOrderAsync(orderRequest);
     }
-    
+
+    [HttpPut("Accept")]
+    public async Task<ActionResult> AcceptOrder(int orderId)
+    {
+        _orderService.ChangeStatus(orderId, BLL.Enums.OrderStatus.Accepted);
+        return Ok();
+    }
+
+    [HttpPut("Delivered")]
+    public async Task<ActionResult> AcceptDeliverdOrder(int orderId)
+    {
+        _orderService.ChangeStatus(orderId, BLL.Enums.OrderStatus.Delivered);
+        return Ok();
+    }
+    [HttpPut("Cancelled")]
+    public async Task<ActionResult> CancelledOrder(int orderId)
+    {
+        _orderService.ChangeStatus(orderId, BLL.Enums.OrderStatus.Cancelled);
+        return Ok();
+    }
+
 }

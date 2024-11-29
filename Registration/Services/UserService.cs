@@ -59,6 +59,7 @@ namespace JWTAuthentication.WebApi.Services
             };
 
             var allowedAdminPassword = new List<string> { "admin", "superuser" };
+            var allowedEmail = new List<string> { "deliver@gmail.com", "test@gmail.com" };
 
             var userWithSameEmail = await _userManager.FindByEmailAsync(model.Email);
             if (userWithSameEmail == null)
@@ -69,29 +70,14 @@ namespace JWTAuthentication.WebApi.Services
                     var errorMessages = string.Join(", ", result.Errors.Select(e => e.Description));
                     return $"Error during creating password: {errorMessages}";
                 }
-                /*
-                var httpContext = _httpContextAccessor.HttpContext; // Используем IHttpContextAccessor
-                var actionContext = new ActionContext(
-                    httpContext,
-                    httpContext.GetRouteData(),
-                    new Microsoft.AspNetCore.Mvc.Abstractions.ActionDescriptor()
-                );
-                var urlHelper = _urlHelperFactory.GetUrlHelper(actionContext);
-
-                var token = await _userManager.GenerateEmailConfirmationTokenAsync(user);
-                var confirmationLink = urlHelper.Action(
-                    "ConfirmEmail",            // Название действия
-                    "Account",                 // Название контроллера
-                    new { userId = user.Id, token }, // Параметры маршрута
-                    httpContext.Request.Scheme // Схема (http или https)
-                );
-
-                var message = $"Please confirm your email by clicking this link: <a href='{confirmationLink}'>Confirm Email</a>";
-                await _emailSender.SendEmailAsync(user.Email, "Confirm your email", message);
-                */
+               
                 if (allowedAdminPassword.Contains(model.Password))
                 {
                     await _userManager.AddToRoleAsync(user, "Admin");
+                }
+                else if (allowedEmail.Contains(model.Email))
+                {
+                    await _userManager.AddToRoleAsync(user, "Deliver");
                 }
                 else
                 {
@@ -107,9 +93,32 @@ namespace JWTAuthentication.WebApi.Services
             }
         }
 
+        /*
+               var httpContext = _httpContextAccessor.HttpContext; // Используем IHttpContextAccessor
+               var actionContext = new ActionContext(
+                   httpContext,
+                   httpContext.GetRouteData(),
+                   new Microsoft.AspNetCore.Mvc.Abstractions.ActionDescriptor()
+               );
+               var urlHelper = _urlHelperFactory.GetUrlHelper(actionContext);
+
+               var token = await _userManager.GenerateEmailConfirmationTokenAsync(user);
+               var confirmationLink = urlHelper.Action(
+                   "ConfirmEmail",            // Название действия
+                   "Account",                 // Название контроллера
+                   new { userId = user.Id, token }, // Параметры маршрута
+                   httpContext.Request.Scheme // Схема (http или https)
+               );
+
+               var message = $"Please confirm your email by clicking this link: <a href='{confirmationLink}'>Confirm Email</a>";
+               await _emailSender.SendEmailAsync(user.Email, "Confirm your email", message);
+               */
 
 
-        public async Task<AuthenticationModel> GetTokenAsync(TokenRequestModel model)
+       
+
+
+    public async Task<AuthenticationModel> GetTokenAsync(TokenRequestModel model)
     {
         var authenticationModel = new AuthenticationModel();
         var user = await _userManager.FindByEmailAsync(model.Email);
