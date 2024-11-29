@@ -33,7 +33,9 @@ public class OrderRepository : GenericRepository<Order>, IOrderRepository
             .SingleOrDefaultAsync();
         return result;
     }
-    
+
+
+
     public async Task<PagedList<Order>> GetPaginatedOrders(OrderParameters parameters)
     {
         return await PagedList<Order>.ToPagedListAsync(table.AsQueryable(), parameters.PageNumber, parameters.PageSize);

@@ -11,7 +11,8 @@ namespace JWTAuthentication.WebApi.Constants
         {
             Administrator,
             Moderator,
-            User
+            User,
+            Deliver
         }
         
 

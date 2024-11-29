@@ -1,8 +1,4 @@
 ﻿using JWTAuthentication.WebApi.Models;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace JWTAuthentication.WebApi.Services
 {
@@ -18,13 +14,13 @@ namespace JWTAuthentication.WebApi.Services
 
 
         Task<AuthenticationModel> GetTokenAsync(TokenRequestModel model);
-       
-        
-        
-        
-        
-        
-        
+
+
+
+
+
+
+
         Task<string> AddRoleAsync(AddRoleModel model);
 
         Task<AuthenticationModel> RefreshTokenAsync(string jwtToken);

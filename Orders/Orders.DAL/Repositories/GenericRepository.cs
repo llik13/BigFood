@@ -33,6 +33,7 @@ public class GenericRepository<T> : IGenericRepository<T> where T : class
             throw new ArgumentNullException();
         }
         var addedEntity = await table.AddAsync(entity);
+        context.SaveChanges();
         return addedEntity.Entity;
     }
 
@@ -43,7 +44,9 @@ public class GenericRepository<T> : IGenericRepository<T> where T : class
             throw new ArgumentNullException();
         }
         var updatedEntity = context.Update(entity);
+        context.SaveChanges();
         return await Task.Run(() => updatedEntity.Entity);
+
     }
 
     public virtual async Task DeleteByIdAsync(int id)
@@ -59,6 +62,7 @@ public class GenericRepository<T> : IGenericRepository<T> where T : class
             throw new ArgumentNullException();
         }
         await Task.Run(() => table.Remove(entity));
+        context.SaveChanges();
     }
 
     public async Task<IEnumerable<T>> FindWithSpecification(ISpecification<T> specification)

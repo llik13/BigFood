@@ -88,4 +88,18 @@ public class OrderService : IOrderService
         await _unitOfWork.OrderRepository.DeleteByIdAsync(id);
         _unitOfWork.CompleteAsync();
     }
+    public async Task ChangeStatus(int id, OrderStatus newStatus)
+    {
+        // Получаем заказ из базы данных
+        var order = await _unitOfWork.OrderRepository.GetByIdAsync(id);
+
+        if (order == null)
+        {
+            throw new ArgumentException($"Order with id {id} not found.");
+        }
+
+        order.Status = newStatus;
+
+        await _unitOfWork.OrderRepository.UpdateAsync(order);
+    }
 }
